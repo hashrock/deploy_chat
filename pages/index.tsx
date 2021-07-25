@@ -35,8 +35,8 @@ export default function Home() {
           onInput={(e) => setUser(e.currentTarget.value)}
         />
       </p>
-      <ChatHistory />
       <SendField user={user} />
+      <ChatHistory />
     </div>
   );
 }
@@ -78,7 +78,7 @@ function ChatHistory() {
     <div>
       <p>Status: {status}</p>
       <ul>
-        {messages.map((msg) => (
+        {messages.reverse().map((msg) => (
           <li>
             <b>{msg.user}</b>: {msg.body}
           </li>
